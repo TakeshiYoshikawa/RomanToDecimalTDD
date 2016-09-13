@@ -1,1 +1,1 @@
-long roman_todecimal(char const *roman);
+long roman_to_decimal(char const *roman);
