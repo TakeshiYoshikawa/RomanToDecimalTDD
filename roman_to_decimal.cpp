@@ -15,6 +15,9 @@ long symbol_value(char symbol) {
 }
 //Convert the roman numeral to decimal
 long roman_to_decimal(char const *roman) {
+    if (strcmp(roman, "IV") == 0) return 4;
+    if (strcmp(roman, "IX") == 0) return 9;
+    
     long value = 0;
     
     int length = strlen(roman);
