@@ -25,4 +25,14 @@ BOOST_AUTO_TEST_CASE(AdditiveForms) {
 BOOST_AUTO_TEST_CASE(SubtractiveNotation) {
     BOOST_CHECK(roman_to_decimal("IV") == 4);
     BOOST_CHECK(roman_to_decimal("IX") == 9);
+    BOOST_CHECK(roman_to_decimal("XL") == 40);
+    BOOST_CHECK(roman_to_decimal("XC") == 90);
+    BOOST_CHECK(roman_to_decimal("CD") == 400);
+}
+
+BOOST_AUTO_TEST_CASE(MixedNotation) {
+    //Testing for longer numbers with subtractive notaion mixed in
+    BOOST_CHECK(roman_to_decimal("MCMIV") == 1904);
+    BOOST_CHECK(roman_to_decimal("MCMXC") == 1990);
+    BOOST_CHECK(roman_to_decimal("MMXIV") == 2014);
 }
