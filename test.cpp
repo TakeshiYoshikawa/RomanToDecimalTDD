@@ -14,3 +14,10 @@ BOOST_AUTO_TEST_CASE(Symbols)
     BOOST_CHECK(roman_to_decimal("D") == 500);
     BOOST_CHECK(roman_to_decimal("M") == 1000);
 }
+
+BOOST_AUTO_TEST_CASE(AdditiveForms) {
+    BOOST_CHECK(roman_to_decimal("II") == 2);
+    BOOST_CHECK(roman_to_decimal("XIII") == 13);
+    BOOST_CHECK(roman_to_decimal("CCVII") == 207);
+    BOOST_CHECK(roman_to_decimal("MLXVI") == 1066);
+}
