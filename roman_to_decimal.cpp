@@ -1,3 +1,4 @@
+#include <string.h>
 #include "roman_to_decimal.h"
 
 long symbol_value(char symbol) {
@@ -14,5 +15,11 @@ long symbol_value(char symbol) {
 }
 //Convert the roman numeral to decimal
 long roman_to_decimal(char const *roman) {
-    return symbol_value(roman[0]);
+    long value = 0;
+    
+    int length = strlen(roman);
+    for (int i=0; i<length; i++) {
+        value += symbol_value(roman[i]);
+    }
+    return value;
 }
