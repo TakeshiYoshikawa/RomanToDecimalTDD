@@ -21,3 +21,8 @@ BOOST_AUTO_TEST_CASE(AdditiveForms) {
     BOOST_CHECK(roman_to_decimal("CCVII") == 207);
     BOOST_CHECK(roman_to_decimal("MLXVI") == 1066);
 }
+
+BOOST_AUTO_TEST_CASE(SubtractiveNotation) {
+    BOOST_CHECK(roman_to_decimal("IV") == 4);
+    BOOST_CHECK(roman_to_decimal("IX") == 9);
+}
