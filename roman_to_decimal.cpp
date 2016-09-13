@@ -15,14 +15,25 @@ long symbol_value(char symbol) {
 }
 //Convert the roman numeral to decimal
 long roman_to_decimal(char const *roman) {
-    if (strcmp(roman, "IV") == 0) return 4;
-    if (strcmp(roman, "IX") == 0) return 9;
-    
     long value = 0;
     
     int length = strlen(roman);
     for (int i=0; i<length; i++) {
-        value += symbol_value(roman[i]);
+        long symbol = symbol_value(roman[i]);
+        
+        //Check next symbol for subtractive notation
+        if (i + 1 < length) {
+            long next = symbol_value(roman[i+1]);
+            if (symbol < next) {
+                //Using subtractive notation
+                symbol = next - symbol;
+                
+                //Skip next symbol
+                i++;
+            }
+        }
+        value += symbol;
     }
+    
     return value;
 }
