@@ -21,6 +21,11 @@ long roman_to_decimal(char const *roman) {
     for (int i=0; i<length; i++) {
         long symbol = symbol_value(roman[i]);
         
+        if (symbol == 0) {
+            //Invalid symbol. Not a valid roman number
+            return -1;
+        }
+        
         //Check next symbol for subtractive notation
         if (i + 1 < length) {
             long next = symbol_value(roman[i+1]);
