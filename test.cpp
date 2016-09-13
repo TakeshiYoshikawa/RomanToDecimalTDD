@@ -4,8 +4,7 @@
 
 #include "roman_to_decimal.h" 
 
-BOOST_AUTO_TEST_CASE(Symbols)
-{
+BOOST_AUTO_TEST_CASE(Symbols) {
     BOOST_CHECK(roman_to_decimal("I") == 1);
     BOOST_CHECK(roman_to_decimal("V") == 5);
     BOOST_CHECK(roman_to_decimal("X") == 10);
@@ -34,5 +33,11 @@ BOOST_AUTO_TEST_CASE(MixedNotation) {
     //Testing for longer numbers with subtractive notaion mixed in
     BOOST_CHECK(roman_to_decimal("MCMIV") == 1904);
     BOOST_CHECK(roman_to_decimal("MCMXC") == 1990);
-    BOOST_CHECK(roman_to_decimal("MMXIV") == 2014);
+    BOOST_CHECK(roman_to_decimal("MMXVI") == 2016);
+}
+
+BOOST_AUTO_TEST_CASE(InvalidNumbers) {
+    //Should return -1 if not a valid roman number
+    BOOST_CHECK(roman_to_decimal("ABC") == -1);
+    BOOST_CHECK(roman_to_decimal("MMXV6") == -1);    
 }
